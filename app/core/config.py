@@ -33,11 +33,9 @@ class Settings(BaseSettings):
     db_keepalives_idle_seconds: int = 30
     db_keepalives_interval_seconds: int = 10
     db_keepalives_count: int = 5
-    embedding_model_name: str = "sentence-transformers/all-MiniLM-L6-v2"
-    embedding_dimension: int = 384
-    embedding_batch_size: int = 32
-    embedding_device: str = "cpu"
-    embedding_normalize: bool = True
+    # Gemini text-embedding-004 produces 768-dimensional vectors
+    embedding_model_name: str = "text-embedding-004"
+    embedding_dimension: int = 768
     retrieval_top_k: int = 5
     retrieval_candidate_k: int = 20
     retrieval_rerank_k: int = 5
